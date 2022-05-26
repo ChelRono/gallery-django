@@ -15,4 +15,4 @@ class Image(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to = '/', Default="")
+    # photo = models.ImageField(upload_to = '/')

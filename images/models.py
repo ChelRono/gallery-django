@@ -1,6 +1,7 @@
 from unicodedata import category
 from django.db import models
 import datetime as dt
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your models here.
@@ -19,7 +20,7 @@ class Category(models.Model):
 try:
     category = Category.objects.get(name = 'example')
     print('Category found')
-except DoesNotExist:
+except ObjectDoesNotExist:
     print('Category was not found')
     class Meta:
         ordering = ['name']

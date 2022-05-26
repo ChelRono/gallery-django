@@ -8,5 +8,11 @@ def index(request):
     '''
     Index function loads the start up page with a filter of randon six images at the beginning
     '''
-    gallery = Image.objects.all()[:6]
-    return render(request,'index.html', {'gallery':gallery})
+    return render(request,'index.html')
+    # gallery = Image.objects.all()[:6]
+    # return render(request,'index.html', {'gallery':gallery})
+
+def gallery(request):
+
+    gallery=Image.objects.all()
+    return render(request,'gallery/gallery.html',{'gallery':gallery})

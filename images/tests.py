@@ -7,14 +7,19 @@ from .models import Location,Category,Image
 class CategoryTestClass(TestCase):
 
     def setUp(self):
-        self.valarie=Category(name="Travel")
+        self.cat1=Category(name="Travel")
+  
 
-    # Testing  instance
-    def test_instance(self):
-        self.assertTrue(isinstance(self.valarie,Category))
+class LocationTestClass(TestCase):
+    # Set up method
+    def setUp(self):
+        self.loc1= Location(name = 'Nairobi')
 
-     # Testing Save Method
-    def test_save_method(self):
-        self.valarie.save_category()
-        category = Category.objects.all()
-        self.assertTrue(len(category) > 0)
+class ImageTestClass(TestCase):
+    def setUp(self):
+        # Creating a new editor and saving it
+        self.image1= Location(name = 'Nairobi')
+        self.image1.save_location()
+        
+        self.new_image= Image(name = 'Food',description = 'A variety of foods',location = self.image1)
+        self.new_image.save()

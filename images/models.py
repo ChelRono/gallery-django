@@ -2,12 +2,27 @@ from unicodedata import category
 from django.db import models
 import datetime as dt
 
+
 # Create your models here.
 class Location(models.Model):
      name=models.CharField(max_length=225)
 
+     def __str__(self):
+        return self.first_name
+
 class Category(models.Model):
      name=models.CharField(max_length=225)
+
+     def __str__(self):
+        return self.first_name
+
+try:
+    category = Category.objects.get(name = 'example')
+    print('Category found')
+except DoesNotExist:
+    print('Category was not found')
+    class Meta:
+        ordering = ['name']
 
 class Image(models.Model):
     name=models.CharField(max_length=225)

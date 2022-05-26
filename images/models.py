@@ -36,7 +36,7 @@ class Category(models.Model):
           self.delete()
 
 try:
-    category = Category.objects.get(name = 'example')
+    category = Category.objects.get(name = 'Travel')
     print('Category found')
 except ObjectDoesNotExist:
     print('Category was not found')

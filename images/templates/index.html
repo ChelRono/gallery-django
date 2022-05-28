@@ -1,6 +1,12 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load bootstrap3 %}
 
-{%extends 'gallery/base.html'%}
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {%endblock%}
 
-{% block content %}
-{{block.super}}
-{% endblock %}
+    {% block content %}
+    
+    {%endblock%}

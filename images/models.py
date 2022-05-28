@@ -3,6 +3,8 @@ from django.db import models
 import datetime as dt
 from django.core.exceptions import ObjectDoesNotExist
 
+import images
+
 
 # Create your models here.
 class Location(models.Model):
@@ -47,8 +49,8 @@ except ObjectDoesNotExist:
 class Image(models.Model):
     name=models.CharField(max_length=225)
     description=models.CharField(max_length=225)
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    category = models.ManyToManyField(Category)
+    location = models.ForeignKey(Location,related_name='location', on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,related_name='category', on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
     # photo = models.ImageField(upload_to = '/')
 
@@ -75,3 +77,7 @@ class Image(models.Model):
     
     def filter_by_location(location):
         pass
+    @classmethod
+    def search_by_name(cls,search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images

@@ -52,7 +52,7 @@ class Image(models.Model):
     location = models.ForeignKey(Location,related_name='location', on_delete=models.CASCADE)
     category = models.ForeignKey(Category,related_name='category', on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    # photo = models.ImageField(upload_to = '/')
+    photo = models.ImageField(upload_to = 'images/')
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')

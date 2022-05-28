@@ -1,4 +1,4 @@
-
+{% load static %}
 
 <div class="album">
     <div class="container">
@@ -8,8 +8,8 @@
           <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
             <div class="card-header">{{image.name}}</div>
             <div class="card-body">                    
-              <img class="card-img-top"src = "{{ image.photo.url }}" data-toggle="modal" data-target="#myModal{{image.id}}" style="height:150px;"/>
-
+              <img src="{{image.image_path |default_if_none:'#' }}" alt="This is an Image" srcset="">
+              
               
                 <br>
               <p class="card-text">{{image.summary}}</p>
@@ -34,14 +34,14 @@
     </button>
   </div>
   <div>
-    <img src = "{{ image.photo.url }}" class="img-fluid" alt="{{image.name}}"/>
+    <img src = "{{image.image_path |default_if_none:'#' }}" class="img-fluid" alt="{{image.name}}"/>
   </div>
   <div class="modal-body">{{image.description}}</div>
   <div class="modal-body">Category: {{image.category}}</div>
   <div class="modal-body">Location:{{image.location}}</div>
   <div class="modal-footer">
 
-    <button type="button" class="btn btn-info" value="https://django-photo-gallery.herokuapp.com{{ image.photo.url }}" onclick="copyURL(this.value)">Copy URL</button>
+    <button type="button" class="btn btn-info" value="https://django-photo-gallery.herokuapp.com{{ image.image_path }}" onclick="copyURL(this.value)">Copy URL</button>
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   </div>
 </div>

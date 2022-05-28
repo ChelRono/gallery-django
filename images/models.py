@@ -1,9 +1,10 @@
+from email.mime import image
 from unicodedata import category
 from django.db import models
 import datetime as dt
 from django.core.exceptions import ObjectDoesNotExist
 
-import images
+
 
 
 # Create your models here.
@@ -52,7 +53,9 @@ class Image(models.Model):
     location = models.ForeignKey(Location,related_name='location', on_delete=models.CASCADE)
     category = models.ForeignKey(Category,related_name='category', on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to = 'images/')
+    image_path = models.ImageField(upload_to = 'images/', null=True)
+
+    
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')

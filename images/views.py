@@ -14,6 +14,8 @@ def index(request):
 def gallery(request):
 
     gallery=Image.objects.all()
+    # news = Article.todays_news()
+    # return render(request, 'all-news/today-news.html', {"date": date,"news":news})
     return render(request,'gallery/gallery.html',{'gallery':gallery})
 
 def search_results(request):

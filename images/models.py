@@ -55,7 +55,10 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     image_path = models.ImageField(upload_to = 'images/', null=True)
 
-    
+    class Meta:
+        ordering = ["pub_date"]
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')

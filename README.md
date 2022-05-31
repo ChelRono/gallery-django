@@ -1,6 +1,7 @@
 # Project Title
 
 gallery-django
+[![Screenshot-from-2022-05-31-16-09-25.png](https://i.postimg.cc/CKts9XpD/Screenshot-from-2022-05-31-16-09-25.png)](https://postimg.cc/R37tHPFV)
 
 ## Getting Started
 

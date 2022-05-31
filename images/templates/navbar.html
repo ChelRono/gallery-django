@@ -9,9 +9,12 @@
     <div class="topnav">
         <a class="active" href="{%url 'index'%}">Home</a>
         <a href="{% url 'gallery' %}">Gallery</a>
+        <a href="{% url 'category' %}">Category</a>
+        <a href="{% url 'location' %}">Location</a>
+
         <div class="col-sm-4 col-md-4 navbar-right">
 
-          <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+          <form class="navbar-form" role="search" action="{% url 'search_category' %}">
   
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search Image" name="image">

@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
-import dj_database_url
-from decouple import config,Csv
+# import dj_database_url
+# from decouple import config,Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+
+SECRET_KEY = 'django-insecure-w^%8eh$j7bs4-l51ibf)9%8=i2z309!sj65^mkq-!)p@c2tgwe'
+DEBUG = True
 # development
 
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'floating-beyond-53482.herokuapp.com']
 
 
 
@@ -83,28 +83,30 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if config('MODE')=="dev":
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
-       }
-       
-   }
-# production
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql',
+#            'NAME': 'gallery',
+#            'USER': 'valarie',
+#            'PASSWORD': '1033927',
+#            'HOST':'127.0.0.1',
+#        }
+       
+#    }
+
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME':'d2c3gdeuo9fk2r',
+      'USER':'wwdumbjtzsdink',
+      'PASSWORD':'cfe16a1caf769dce400ea58fd4f0a57f7b95bca5fed0de520d10d0126c618c6a',
+      'HOST':'ec2-3-234-131-8.compute-1.amazonaws.com',
+      'PORT':'5432',
+   }
+}
+# production
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

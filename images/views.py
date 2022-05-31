@@ -1,6 +1,7 @@
+from unicodedata import category, name
 from django.shortcuts import render
 from django.http  import HttpResponse
-from .models import Image
+from .models import Category, Image, Location
 
 
 # Create your views here.
@@ -19,15 +20,28 @@ def gallery(request):
     # return render(request, 'all-news/today-news.html', {"date": date,"news":news})
     return render(request,'gallery/gallery.html',{"gallery":gallery})
 
-def search_results(request):
-
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
+def search_category(request):
+    if 'category' in request.GET and request.GET["category"]:
+        search_term  =  request.GET.get("category")
         searched_images = Image.search_by_category(search_term)
-        message = f"{search_term}"
-
-        return render(request, 'search.html',{"message":message,"image": searched_images})
-
+        message  = f"{search_term}"
+        
+        return render(request, 'search.html', {"message":message, "images":searched_images})
     else:
-        message = "You haven't searched for any term"
-        return render(request, 'search.html',{"message":message})
+        message = "You have not searched for any category"
+        
+        return render(request, 'search.html', {"message":message})
+
+def view_location(request):
+    
+    location=Image.search_by_location(name)
+
+    return render(request,'location.html', {"location":location})
+
+def view_category(request):
+    
+    category=Image.search_by_category(name)
+
+    return render(request,'category.html', {"category":category})
+
+    

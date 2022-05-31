@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+
+<div class="album">
+    <div class="container">
+        <h2>Category</h2>
+        <div class="row">
+        {% for image in category %}
+        {% include 'category.html'%}
+        {% include 'modal.html' %}
+        {% empty %}
+        <h3>There are currently no images under this category</h3>
+        {% endfor %}
+      </div>
+
+{% endblock %}

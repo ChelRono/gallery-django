@@ -87,3 +87,26 @@ class Image(models.Model):
     def search_by_category(cls,search_term):
         images = cls.objects.filter(name__icontains=search_term)
         return images
+
+    @classmethod
+    def search_by_location(cls,search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images
+
+# @classmethod
+# def search_by_category(cls, category_name):
+#     try:
+#       img_by_category = cls.objects.filter(category= category_name).all()
+#       return img_by_category
+#     except ObjectDoesNotExist:
+#       message = "There are no images from that category"
+#       return message
+
+# @classmethod
+# def search_by_location(cls, location_name):
+#     try:
+#       img_by_location = cls.objects.filter(location= location_name).all()
+#       return img_by_location
+#     except ObjectDoesNotExist:
+#       message = "There are no images from that location"
+#       return message

@@ -84,27 +84,27 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'gallery',
-           'USER': 'valarie',
-           'PASSWORD': '1033927',
-           'HOST':'127.0.0.1',
-       }
+# DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql',
+#            'NAME': 'gallery',
+#            'USER': 'valarie',
+#            'PASSWORD': '1033927',
+#            'HOST':'127.0.0.1',
+#        }
        
-   }
+#    } 
 
-# DATABASES={
-#    'default':{
-#       'ENGINE':'django.db.backends.postgresql_psycopg2',
-#       'NAME':'d2c3gdeuo9fk2r',
-#       'USER':'wwdumbjtzsdink',
-#       'PASSWORD':'cfe16a1caf769dce400ea58fd4f0a57f7b95bca5fed0de520d10d0126c618c6a',
-#       'HOST':'ec2-3-234-131-8.compute-1.amazonaws.com',
-#       'PORT':'5432',
-#    }
-# }
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME':'d2c3gdeuo9fk2r',
+      'USER':'wwdumbjtzsdink',
+      'PASSWORD':'cfe16a1caf769dce400ea58fd4f0a57f7b95bca5fed0de520d10d0126c618c6a',
+      'HOST':'ec2-3-234-131-8.compute-1.amazonaws.com',
+      'PORT':'5432',
+   }
+}
 # production
 
 

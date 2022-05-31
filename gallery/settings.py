@@ -98,14 +98,15 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 DATABASES={
    'default':{
       'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'d2c3gdeuo9fk2r',
-      'USER':'wwdumbjtzsdink',
-      'PASSWORD':'cfe16a1caf769dce400ea58fd4f0a57f7b95bca5fed0de520d10d0126c618c6a',
-      'HOST':'ec2-3-234-131-8.compute-1.amazonaws.com',
+      'NAME':'d77kame8toav7q',
+      'USER':'tscqrcbxayzxyw',
+      'PASSWORD':'5936eba8e322dd6a3e82c4e6718bae11d6ad7880bb1267295716e843d5f6ed5d',
+      'HOST':'ec2-34-230-153-41.compute-1.amazonaws.com',
       'PORT':'5432',
    }
 }
-# production
+# postgres://YourUserName:YourPassword@YourHostname:5432/YourDatabaseName
+# postgres://tscqrcbxayzxyw:5936eba8e322dd6a3e82c4e6718bae11d6ad7880bb1267295716e843d5f6ed5d@ec2-34-230-153-41.compute-1.amazonaws.com:5432/d77kame8toav7q
 
 
 # Password validation

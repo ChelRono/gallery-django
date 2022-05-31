@@ -1,5 +1,5 @@
-from email.mime import image
-from unicodedata import category
+
+
 from django.db import models
 import datetime as dt
 from django.core.exceptions import ObjectDoesNotExist
@@ -38,13 +38,13 @@ class Category(models.Model):
      def delete_category(self):
           self.delete()
 
-try:
-    category = Category.objects.get(name = 'Travel')
-    print('Category found')
-except ObjectDoesNotExist:
-    print('Category was not found')
-    class Meta:
-        ordering = ['name']
+# try:
+#     category = Category.objects.get(name = 'Travel')
+#     print('Category found')
+# except ObjectDoesNotExist:
+#     print('Category was not found')
+#     class Meta:
+#         ordering = ['name']
 
 
 class Image(models.Model):

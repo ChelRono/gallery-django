@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 
 DATABASES={
    'default':{
-      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'ENGINE':'django.db.backends.postgresql',
       'NAME':'d77kame8toav7q',
       'USER':'tscqrcbxayzxyw',
       'PASSWORD':'5936eba8e322dd6a3e82c4e6718bae11d6ad7880bb1267295716e843d5f6ed5d',
